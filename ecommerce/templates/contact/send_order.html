@@ -1,0 +1,8 @@
+<h1> order form submission</h1>
+<p>Name:</p>{{name}}
+<p>Email:</p>{{email}}
+<p>Address:</p>{{address}}
+<p>Order</p>
+{% for item in user.cart.all %}
+  <p>Item Name:</p>{{item.item.title}} <p>Item Quantity:</p>{{item.quantity}}
+{% endfor %}

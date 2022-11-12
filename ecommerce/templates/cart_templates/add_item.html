@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+           Adding to cart
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+       {% block content %}
+       <p>Your item has been added to your cart.<a href="/list/">Check your cart here</a></p>
+       <p>Or to add more items <a href="/">Goto Home</a></p>
+       {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+
+<head>
+    {% block title %}
+       Item List
+    {% endblock %}
+</head>
+<body>
+   {% block content %}
+      <h1>Products</h1>
+      <hr class="mt-0 mb-4">
+      {% for item in object_list %}
+         <div class="product_list">
+              <img src="{{item.picture.url}}">
+              <h4>{{item.get_category_display}}</h4>
+              <h3>{{item.title}}</h3>
+              <a href="{{item.get_absolute_url}}">Read More</a>
+         </div>
+      {% endfor %}
+       <div class="categories">
+          <h1>Categories</h1>
+          <hr class="mt-0 mb-4">
+          <a href="/shirts/">Shirts</a>&emsp;
+          <a href="/shoes/">Shoes</a>&emsp;
+          <a href="/watches/">Watches</a>&emsp;
+          <a href="/jewellery/">Jewellery</a>&emsp;
+       </div>
+
+       <div class="aboust_us">
+           <h1>About Us</h1>
+           <hr class="mt-0 mb-4">
+           <p>
+               We are an ecommerce company with the aim to provide our customers with
+               the best services we can. Our company thrives on its customers
+               satisfaction and that is just what we try to offer.
+           </p>
+       </div>
+   {% endblock %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    {% block title %}
+        {{object.title}}-details
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+       <h1>Product Details</h1>
+       <hr class="mt-0 mb-4">
+       <ul>
+         <li><h3>Name:</h3></li>{{object.title}}
+         <li><h3>Category:</h3></li>{{object.get_category_display}} ({{object.category}})
+         <li><h3>Color:</h3></li>{{object.color}}
+         <li><h3>Price:</h3></li>{{object.price}}
+         <li><h3>description:</h3></li>{{object.description}}
+       </ul>
+        <form method="post" action="
+        {% if user.is_authenticated %}
+           {{object.get_item_url}}
+        {% else %}
+            /login/
+        {% endif %}">{% csrf_token %}
+            <button class="btn btn-primary" type="submit" value="save">ADD TO CART</button>
+        </form>
+    {% endblock %}
+
+</body>
+</html>

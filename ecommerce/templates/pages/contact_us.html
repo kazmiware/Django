@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+          Contact us
+        {% endblock %}
+    </title>
+</head>
+<body>
+  {% block content %}
+   <div class="contact_us">
+       <p>For your queries contact us</p>
+   </div>
+
+    <form class="form-group" method="post" action="/contact/">{% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-primary" type="submit" value="send">Send</button>
+    </form>
+  {% endblock %}
+</body>
+</html>

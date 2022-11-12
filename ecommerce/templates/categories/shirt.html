@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+           Shoes
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+
+      {% block content %}
+          <h1>Shirt</h1>
+          <hr class="mt-0 mb-4">
+          {% for item in object_list %}
+                {% if item.category == "S" %}
+                     <div class="product_list">
+                          <img src="{{item.picture.url}}">
+                          <h4>{{item.get_category_display}}</h4>
+                          <h3>{{item.title}}</h3>
+                          <a href="{{item.get_absolute_url}}">Read More</a>
+                     </div>
+                {% endif %}
+          {% endfor %}
+     {% endblock%}
+
+</body>
+</html>

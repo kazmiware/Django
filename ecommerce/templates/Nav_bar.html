@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<link rel="stylesheet" href="{% static 'css/nav_bar.css' %}" style="text/css">
+
+<div class="menu">
+
+   <div class="header">
+      <div class="logo">
+         <a href="/"><img src="{% static 'web_pics/logo-png.jpg' %}"></a>
+      </div>
+
+      <div class="cart">
+         <a href="/list/"><img src="{% static 'web_pics/cart.jpg' %}"></a>
+      </div>
+   </div>
+
+   <div class="row_1">
+      <ul>
+         <li><a href="/">Home</a></li>&emsp;
+         <li><a href="/contact">Contact Us</a></li>
+         {% if not user.is_authenticated %} &emsp;
+           <li><a href="/login/">Login</a></li>
+         {% endif %}
+      </ul>
+   </div>
+
+</div>
+
+<body>
+</body>
+
+</html>
